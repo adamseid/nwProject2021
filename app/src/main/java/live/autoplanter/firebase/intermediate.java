@@ -28,7 +28,7 @@ public class intermediate extends AppCompatActivity{
         delivery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(intermediate.this, live.autoplanter.firebase.LogIn.class);
+                Intent intent = new Intent(intermediate.this, client.class);
                 intent.putExtra("key",value);
                 startActivity(intent);
             }
@@ -37,7 +37,7 @@ public class intermediate extends AppCompatActivity{
         client.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(intermediate.this, live.autoplanter.firebase.LogIn.class);
+                Intent intent = new Intent(intermediate.this, client.class);
                 intent.putExtra("key",value);
                 startActivity(intent);
             }
