@@ -38,31 +38,6 @@ public class MainActivity extends AppCompatActivity {
         fAuth = FirebaseAuth.getInstance();
         btnRegister = (Button) findViewById(R.id.main_sign_up_button);
         btnLogin = (Button) findViewById(R.id.main_log_in_button);
-        //etEmail = (EditText) findViewById(R.id.etEmail);
-        //etPassword = (EditText) findViewById(R.id.etPassword);
-
-        //Logs the user into the authentication table and redirects them to the mainPage
-//        btnLogin.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                stringEmail = etEmail.getText().toString();
-//                stringPassword = etPassword.getText().toString();
-//                fAuth.signInWithEmailAndPassword(stringEmail,stringPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-//                    @Override
-//                    public void onComplete(@NonNull Task<AuthResult> task) {
-//                        if(task.isSuccessful()){
-//                            String uuid = fAuth.getUid();
-//                            Toast.makeText(MainActivity.this,"Logged In",Toast.LENGTH_SHORT).show();
-//                            Intent intent = new Intent(MainActivity.this, mainPage.class);
-//                            intent.putExtra("key",uuid);
-//                            startActivity(intent);
-//                        }else{
-//                            Toast.makeText(MainActivity.this, "ERROR " + task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-//                        }
-//                    }
-//                });
-//            }
-//        });
 
         //Redirects the user so they can register a new account
         btnLogin.setOnClickListener(new View.OnClickListener() {
