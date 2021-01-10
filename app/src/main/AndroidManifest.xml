@@ -19,6 +19,8 @@
         </activity>
         <activity android:name=".Register"/>
         <activity android:name=".mainPage"/>
+        <activity android:name=".LogIn"/>
+        <activity android:name=".intermediate"/>
     </application>
 
 </manifest>

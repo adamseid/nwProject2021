@@ -87,7 +87,7 @@ public class mainPage extends AppCompatActivity{
                 items = etItems.getText().toString();
                 database = FirebaseDatabase.getInstance();
                 myRef = database.getReference(value);
-                myRef.child(items).setValue(amount);
+                myRef.child("Items").child(amount + " " + items).setValue("Individual");
                 CheckBox cb = new CheckBox(getApplicationContext());
                 cb.setText(items + " " + amount);
                 linearLayout.addView(cb);

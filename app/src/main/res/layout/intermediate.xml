@@ -8,54 +8,58 @@
     android:background="@color/green">
 
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="399dp"
+        android:layout_height="79dp"
+        android:alpha="0.75"
+        android:fontFamily="@font/candarab"
+        android:gravity="center"
+        android:text="Are you a Delivery driver or a client?"
+        android:textColor="@android:color/white"
+        android:textSize="34.27dp"
+        app:layout_constraintBottom_toTopOf="@+id/delivery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
-        android:id="@+id/main_log_in_button"
+        android:id="@+id/delivery"
         android:layout_width="171dp"
         android:layout_height="48dp"
         android:background="@drawable/button"
-        android:text="LOG IN"
+        android:text="Delivery"
         android:textColor="@android:color/white"
         android:textSize="20.6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.8" />
+        app:layout_constraintVertical_bias="0.569" />
 
     <Button
-        android:id="@+id/main_sign_up_button"
+        android:id="@+id/client"
         android:layout_width="171dp"
         android:layout_height="48dp"
         android:background="@drawable/button"
-        android:text="SIGN UP"
+        android:text="Client"
         android:textColor="@android:color/white"
         android:textSize="20.6dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.9" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/cart"
-        tools:layout_editor_absoluteX="27dp"
-        tools:layout_editor_absoluteY="-99dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintVertical_bias="0.669" />
 
     <!--    <ImageView-->
-<!--        android:id="@+id/imageView2"-->
-<!--        android:layout_width="414dp"-->
-<!--        android:layout_height="650dp"-->
-<!--        android:layout_marginStart="16dp"-->
-<!--        android:layout_marginLeft="16dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:srcCompat="@drawable/CartnerDullGreenpng"-->
-<!--        tools:ignore="MissingConstraints"-->
-<!--        tools:layout_editor_absoluteY="-55dp" />-->
+    <!--        android:id="@+id/imageView2"-->
+    <!--        android:layout_width="414dp"-->
+    <!--        android:layout_height="650dp"-->
+    <!--        android:layout_marginStart="16dp"-->
+    <!--        android:layout_marginLeft="16dp"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:srcCompat="@drawable/CartnerDullGreenpng"-->
+    <!--        tools:ignore="MissingConstraints"-->
+    <!--        tools:layout_editor_absoluteY="-55dp" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

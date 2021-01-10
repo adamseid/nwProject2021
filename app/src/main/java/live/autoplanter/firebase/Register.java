@@ -23,8 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class Register extends AppCompatActivity {
     //Creates objects/variables
-    EditText etName, etEmail, etPassword;
-    String name, email, password;
+    EditText etName, etEmail, etPassword, etAddress, etState, etCountry, etPostalCode;
+    String name, email, password, address, state, country, postalCode;
     Button btnRegister;
     FirebaseAuth fAuth;
     FirebaseDatabase database;
@@ -34,12 +34,16 @@ public class Register extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         //Sets up page of app
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.register_layout);
+        setContentView(R.layout.registration_page);
         //Initializes objects
         etName = (EditText) findViewById(R.id.etNewName);
-        etEmail = (EditText) findViewById(R.id.etNewEmail);
-        etPassword = (EditText) findViewById(R.id.etNewPassword);
-        btnRegister = (Button) findViewById(R.id.btnNewRegister);
+        etEmail = (EditText) findViewById(R.id.logInEmail);
+        etPassword = (EditText) findViewById(R.id.logInPassword);
+        etAddress = (EditText) findViewById(R.id.etNewAdress);;
+        etState = (EditText) findViewById(R.id.etNewState);;
+        etCountry= (EditText) findViewById(R.id.etNewCountry);;
+        etPostalCode = (EditText) findViewById(R.id.etNewPostalCode);;
+        btnRegister = (Button) findViewById(R.id.main_log_in_button);
         fAuth = FirebaseAuth.getInstance();
 
 
@@ -51,6 +55,10 @@ public class Register extends AppCompatActivity {
                 name = etName.getText().toString();
                 email = etEmail.getText().toString();
                 password = etPassword.getText().toString();
+                address = etAddress.getText().toString();
+                state = etState.getText().toString();
+                country = etCountry.getText().toString();
+                postalCode = etPostalCode.getText().toString();
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -59,9 +67,13 @@ public class Register extends AppCompatActivity {
                             String uuid = fAuth.getCurrentUser().getUid();
                             database = FirebaseDatabase.getInstance();
                             myRef = database.getReference(uuid);
-                            myRef.child("username").setValue(name);
+                            myRef.child("info").child("Username").setValue(name);
+                            myRef.child("info").child("Address").setValue(address);
+                            myRef.child("info").child("Province or State").setValue(state);
+                            myRef.child("info").child("Country").setValue(country);
+                            myRef.child("info").child("Postal Code").setValue(postalCode);
 
-                            Intent intent = new Intent(Register.this, mainPage.class);
+                            Intent intent = new Intent(Register.this, intermediate.class);
                             intent.putExtra("key",uuid);
                             startActivity(intent);
                         }else{
