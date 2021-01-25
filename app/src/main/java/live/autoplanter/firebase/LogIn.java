@@ -46,6 +46,7 @@ public class LogIn extends AppCompatActivity {
             public void onClick(View v) {
                 email = etEmail.getText().toString();
                 password = etPassword.getText().toString();
+                // Logs user in to their account
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -62,8 +63,6 @@ public class LogIn extends AppCompatActivity {
                 });
             }
         });
-
-
     }
 }
 

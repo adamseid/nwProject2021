@@ -24,6 +24,7 @@ public class intermediate extends AppCompatActivity{
         if (extras != null) {
             value = extras.getString("key");
         }
+        System.out.println(value);
 
         delivery.setOnClickListener(new View.OnClickListener() {
             @Override

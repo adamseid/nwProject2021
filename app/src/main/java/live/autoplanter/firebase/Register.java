@@ -59,6 +59,7 @@ public class Register extends AppCompatActivity {
                 state = etState.getText().toString();
                 country = etCountry.getText().toString();
                 postalCode = etPostalCode.getText().toString();
+                // Creates User in database
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -72,7 +73,6 @@ public class Register extends AppCompatActivity {
                             myRef.child("info").child("Province or State").setValue(state);
                             myRef.child("info").child("Country").setValue(country);
                             myRef.child("info").child("Postal Code").setValue(postalCode);
-
                             Intent intent = new Intent(Register.this, intermediate.class);
                             intent.putExtra("key",uuid);
                             startActivity(intent);
@@ -83,7 +83,5 @@ public class Register extends AppCompatActivity {
                 });
             }
         });
-
-
     }
 }

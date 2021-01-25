@@ -18,7 +18,7 @@ import java.util.ArrayList;
 
 public class client extends AppCompatActivity{
     //Creates objects/variables
-    Button btnadd;
+    Button btnadd, shoppingList;
     EditText etItems,etAmount;
     String value, items, amount;
     FirebaseDatabase database;
@@ -31,7 +31,8 @@ public class client extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.clientpage);
         //Initializes objects
-        btnadd = (Button) findViewById(R.id.delivery);
+        btnadd = (Button) findViewById(R.id.ADD);
+        shoppingList = (Button) findViewById(R.id.viewShoppingList);
         etItems = (EditText) findViewById(R.id.item);
         etAmount = (EditText) findViewById(R.id.amount);
 
@@ -50,6 +51,16 @@ public class client extends AppCompatActivity{
                 database = FirebaseDatabase.getInstance();
                 myRef = database.getReference(value);
                 myRef.child("Items").child(amount + " " + items).setValue("Individual");
+            }
+        });
+
+        //Checks shopping list of customer
+        shoppingList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(client.this, shopping.class);
+                intent.putExtra("key",value);
+                startActivity(intent);
             }
         });
     }
